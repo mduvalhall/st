@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font:pixelsize=20:antialias=true:autohint=true";
+static char *font = "BlexMono Nerd Font:style=Medium:pixelsize=19:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -27,7 +27,7 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
-static float chscale = 1.1;
+static float chscale = 1.0;
 
 /*
  * word delimiter string
@@ -94,40 +94,43 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 
+/* GitHub Dark Dimmed */
+
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"#2f3541", /* 0 - black   (bg) */
-	"#e88a8a", /* 1 - red     */
-	"#a3c499", /* 2 - green   */
-	"#e8d96f", /* 3 - yellow  */
-	"#82a8d0", /* 4 - blue    */
-	"#b394d4", /* 5 - magenta */
-	"#7fc4ba", /* 6 - cyan    */
-	"#a7afc0", /* 7 - white   */
+	/* normal */
+	[0] = "#545d68", /* black */
+	[1] = "#f47067", /* red */
+	[2] = "#57ab5a", /* green */
+	[3] = "#c69026", /* yellow */
+	[4] = "#539bf5", /* blue */
+	[5] = "#b083f0", /* magenta */
+	[6] = "#39c5cf", /* cyan */
+	[7] = "#909dab", /* white */
 
-	/* 8 bright colors */
-	"#4f5a6e", /* 8  - brightblack   */
-	"#ffb1b1", /* 9  - brightred     */
-	"#bfdcb5", /* 10 - brightgreen   */
-	"#fff493", /* 11 - brightyellow  */
-	"#a5c8e8", /* 12 - brightblue    */
-	"#cdb1e8", /* 13 - brightmagenta */
-	"#9fdcd2", /* 14 - brightcyan    */
-	"#eceef2", /* 15 - brightwhite   */
+	/* bright */
+	[8]  = "#636e7b", /* bright black */
+	[9]  = "#ff938a", /* bright red */
+	[10] = "#6bc46d", /* bright green */
+	[11] = "#daaa3f", /* bright yellow */
+	[12] = "#6cb6ff", /* bright blue */
+	[13] = "#dcbdfb", /* bright magenta */
+	[14] = "#56d4dd", /* bright cyan */
+	[15] = "#cdd9e5", /* bright white */
 
-	[255] = 0,
-
-	/* more colors can be added after 255 */
-	"#eceef2", /* 256 - cursor          */
-	"#2f3541", /* 257 - reverse cursor  */
-	"#eceef2", /* 258 - default fg      */
-	"#2f3541", /* 259 - default bg      */
+	/* special */
+	[256] = "#22272e", /* background */
+	[257] = "#adbac7", /* foreground */
+	[258] = "#adbac7", /* cursor */
 };
 
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor, reverse cursor
+ */
+unsigned int defaultbg = 256;
+unsigned int defaultfg = 257;
+unsigned int defaultcs = 258;
+unsigned int defaultrcs = 256;
 
 /*
  * Default shape of cursor
