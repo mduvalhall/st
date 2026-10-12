@@ -1,11 +1,15 @@
 /* See LICENSE file for copyright and license details. */
 
+const int boxdraw = 1;
+const int boxdraw_bold = 0;
+const int boxdraw_braille = 0;
+
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "BlexMono Nerd Font:style=Medium:pixelsize=19:antialias=true:autohint=true";
+static char *font = "JetBrainsMono Nerd Font Mono:style=Medium:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -94,43 +98,40 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 
-/* GitHub Dark Dimmed */
+/* Alabaster (refined) */
 
 static const char *colorname[] = {
-	/* normal */
-	[0] = "#545d68", /* black */
-	[1] = "#f47067", /* red */
-	[2] = "#57ab5a", /* green */
-	[3] = "#c69026", /* yellow */
-	[4] = "#539bf5", /* blue */
-	[5] = "#b083f0", /* magenta */
-	[6] = "#39c5cf", /* cyan */
-	[7] = "#909dab", /* white */
+	/* 8 normal colors */
+	[0] = "#000000", /* black   */
+	[1] = "#a33b35", /* red     */
+	[2] = "#4c843d", /* green   */
+	[3] = "#9a7313", /* ochre   */
+	[4] = "#416ea9", /* muted royal blue */
+	[5] = "#7a4595", /* magenta */
+	[6] = "#2d7b86", /* deep teal */
+	[7] = "#bbbbbb", /* white   */
 
-	/* bright */
-	[8]  = "#636e7b", /* bright black */
-	[9]  = "#ff938a", /* bright red */
-	[10] = "#6bc46d", /* bright green */
-	[11] = "#daaa3f", /* bright yellow */
-	[12] = "#6cb6ff", /* bright blue */
-	[13] = "#dcbdfb", /* bright magenta */
-	[14] = "#56d4dd", /* bright cyan */
-	[15] = "#cdd9e5", /* bright white */
+	/* 8 bright colors */
+	[8]  = "#777777", /* bright black   */
+	[9]  = "#d2554f", /* bright red     */
+	[10] = "#5ea63d", /* bright green   */
+	[11] = "#b58a24", /* bright ochre   */
+	[12] = "#5b86bf", /* bright blue    */
+	[13] = "#a25ec0", /* bright magenta */
+	[14] = "#3f94a0", /* bright teal    */
+	[15] = "#ffffff", /* bright white   */
 
-	/* special */
-	[256] = "#22272e", /* background */
-	[257] = "#adbac7", /* foreground */
-	[258] = "#adbac7", /* cursor */
+	/* Special colors */
+	[256] = "#000000", /* cursor */
+	[257] = "#ffffff", /* cursor text */
+	[258] = "#000000", /* foreground */
+	[259] = "#f7f7f7", /* background */
 };
 
-/*
- * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
- */
-unsigned int defaultbg = 256;
-unsigned int defaultfg = 257;
-unsigned int defaultcs = 258;
-unsigned int defaultrcs = 256;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 259;
+unsigned int defaultcs = 256;
+static unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
