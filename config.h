@@ -98,34 +98,34 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 
-/* Alabaster (refined) */
-
+/* Everforest Dark Medium */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	[0] = "#000000", /* black   */
-	[1] = "#a33b35", /* red     */
-	[2] = "#4c843d", /* green   */
-	[3] = "#9a7313", /* ochre   */
-	[4] = "#416ea9", /* muted royal blue */
-	[5] = "#7a4595", /* magenta */
-	[6] = "#2d7b86", /* deep teal */
-	[7] = "#bbbbbb", /* white   */
+	"#475258", /* black   (bg3)   */
+	"#e67e80", /* red             */
+	"#a7c080", /* green           */
+	"#dbbc7f", /* yellow          */
+	"#7fbbb3", /* blue            */
+	"#d699b6", /* magenta         */
+	"#83c092", /* cyan    (aqua)  */
+	"#d3c6aa", /* white   (fg)    */
 
 	/* 8 bright colors */
-	[8]  = "#777777", /* bright black   */
-	[9]  = "#d2554f", /* bright red     */
-	[10] = "#5ea63d", /* bright green   */
-	[11] = "#b58a24", /* bright ochre   */
-	[12] = "#5b86bf", /* bright blue    */
-	[13] = "#a25ec0", /* bright magenta */
-	[14] = "#3f94a0", /* bright teal    */
-	[15] = "#ffffff", /* bright white   */
+	"#859289", /* bright black   (grey1) */
+	"#e67e80", /* bright red             */
+	"#a7c080", /* bright green           */
+	"#dbbc7f", /* bright yellow          */
+	"#7fbbb3", /* bright blue            */
+	"#d699b6", /* bright magenta         */
+	"#83c092", /* bright cyan            */
+	"#d3c6aa", /* bright white           */
 
-	/* Special colors */
-	[256] = "#000000", /* cursor */
-	[257] = "#ffffff", /* cursor text */
-	[258] = "#000000", /* foreground */
-	[259] = "#f7f7f7", /* background */
+	[255] = 0,
+
+	"#d3c6aa", /* 256: cursor             (fg)  */
+	"#2d353b", /* 257: reverse cursor     (bg0) */
+	"#d3c6aa", /* 258: default foreground (fg)  */
+	"#2d353b", /* 259: default background (bg0) */
 };
 
 unsigned int defaultfg = 258;
