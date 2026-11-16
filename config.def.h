@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font Mono:style=Medium:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -68,18 +68,6 @@ static unsigned int blinktimeout = 800;
 static unsigned int cursorthickness = 2;
 
 /*
- * 1: render most of the lines/blocks characters without using the font for
- *    perfect alignment between cells (U2500 - U259F except dashes/diagonals).
- *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
- * 0: disable (render all U25XX glyphs normally from the font).
- */
-const int boxdraw = 0;
-const int boxdraw_bold = 0;
-
-/* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
-const int boxdraw_braille = 0;
-
-/*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
  * it
  */
@@ -103,36 +91,39 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 4;
+unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	[0] = "#000000", /* black   */
-	[1] = "#a33b35", /* red     */
-	[2] = "#4c843d", /* green   */
-	[3] = "#9a7313", /* ochre   */
-	[4] = "#416ea9", /* muted royal blue */
-	[5] = "#7a4595", /* magenta */
-	[6] = "#2d7b86", /* deep teal */
-	[7] = "#bbbbbb", /* white   */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
 
 	/* 8 bright colors */
-	[8]  = "#777777", /* bright black   */
-	[9]  = "#d2554f", /* bright red     */
-	[10] = "#5ea63d", /* bright green   */
-	[11] = "#b58a24", /* bright ochre   */
-	[12] = "#5b86bf", /* bright blue    */
-	[13] = "#a25ec0", /* bright magenta */
-	[14] = "#3f94a0", /* bright teal    */
-	[15] = "#ffffff", /* bright white   */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
 
-	/* Special colors */
-	[256] = "#000000", /* cursor */
-	[257] = "#ffffff", /* cursor text */
-	[258] = "#000000", /* foreground */
-	[259] = "#f7f7f7", /* background */
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+	"gray90", /* default foreground colour */
+	"black", /* default background colour */
 };
+
 
 /*
  * Default colors (colorname index)
