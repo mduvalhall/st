@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "JetBrainsMono Nerd Font Mono:style=Medium:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -103,39 +103,36 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	[0] = "#000000", /* black   */
+	[1] = "#a33b35", /* red     */
+	[2] = "#4c843d", /* green   */
+	[3] = "#9a7313", /* ochre   */
+	[4] = "#416ea9", /* muted royal blue */
+	[5] = "#7a4595", /* magenta */
+	[6] = "#2d7b86", /* deep teal */
+	[7] = "#bbbbbb", /* white   */
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	[8]  = "#777777", /* bright black   */
+	[9]  = "#d2554f", /* bright red     */
+	[10] = "#5ea63d", /* bright green   */
+	[11] = "#b58a24", /* bright ochre   */
+	[12] = "#5b86bf", /* bright blue    */
+	[13] = "#a25ec0", /* bright magenta */
+	[14] = "#3f94a0", /* bright teal    */
+	[15] = "#ffffff", /* bright white   */
 
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	/* Special colors */
+	[256] = "#000000", /* cursor */
+	[257] = "#ffffff", /* cursor text */
+	[258] = "#000000", /* foreground */
+	[259] = "#f7f7f7", /* background */
 };
-
 
 /*
  * Default colors (colorname index)
